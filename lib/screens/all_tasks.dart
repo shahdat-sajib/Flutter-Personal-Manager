@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:task_manager/colors/app_colors.dart';
 import 'package:task_manager/widgets/button_widget.dart';
 import 'package:task_manager/widgets/task_widget.dart';
+import 'package:get/get.dart';
 
 class AllTasks extends StatelessWidget {
   const AllTasks({Key? key}) : super(key: key);
@@ -40,10 +42,14 @@ class AllTasks extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(top: 60.0, left: 20.0),
             alignment: Alignment.topLeft,
-            child: Icon(
+            child: InkWell(
+              onTap: (){
+                Get.back();
+              },
+              child: Icon(
               Icons.arrow_back,
               color: AppColors.secondaryColor,
-            ),
+            ),),
             width: double.maxFinite,
             height: MediaQuery.of(context).size.height / 3.2,
             decoration: BoxDecoration(

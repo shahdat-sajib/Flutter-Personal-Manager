@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager/colors/app_colors.dart';
+import 'package:task_manager/screens/all_tasks.dart';
 import 'package:task_manager/widgets/button_widget.dart';
+import 'package:get/get.dart';
+
+import 'add_task.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({ Key? key }) : super(key: key);
@@ -39,17 +43,32 @@ class _HomeScreenState extends State<HomeScreen> {
 
             SizedBox(height: MediaQuery.of(context).size.height/2.5,), //this is for gap between heading text and button
 
-            ButtonWidget(
-              backgroundcolor: AppColors.mainColor, //get the color from our colors folder
-              text: "Add Task", 
-              textColor: Colors.white),
+            InkWell( 
+              onTap: (){  //for switching to all tasks page when tap the button
+                Get.to(()=>AllTasks(), 
+                transition: Transition.fade, 
+                duration: Duration(seconds: 1));
+              },
+              child: ButtonWidget(
+                backgroundcolor: AppColors.mainColor, //get the color from our colors folder
+                text: "Add Task", 
+                textColor: Colors.white),
+            ),
 
             SizedBox(height: 20.0,),
             
-              ButtonWidget(
-                backgroundcolor: Colors.white, //get the color from our colors folder
-                text: "View All",
-                textColor: AppColors.smallTextColor)
+              InkWell(
+                onTap: () {
+                //for switching to all tasks page when tap the button
+                Get.to(() => AddTask(),
+                    transition: Transition.zoom,
+                    duration: Duration(milliseconds: 500));
+              },
+                child: ButtonWidget(
+                  backgroundcolor: Colors.white, //get the color from our colors folder
+                  text: "View All",
+                  textColor: AppColors.smallTextColor),
+              )
           ],
         ),
         decoration: BoxDecoration(

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:task_manager/colors/app_colors.dart';
 import 'package:task_manager/widgets/button_widget.dart';
 import 'package:task_manager/widgets/textfield_widget.dart';
@@ -32,7 +33,9 @@ class AddTask extends StatelessWidget {
             Column( //this column is for the arrow
               children: [
                 SizedBox(height: 60.0,),
-                IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back,
+                IconButton(onPressed: (){
+                  Get.back();
+                }, icon: Icon(Icons.arrow_back,
                 color: AppColors.secondaryColor,))
               ],
             ),
