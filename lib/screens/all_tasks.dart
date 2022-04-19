@@ -12,6 +12,14 @@ class AllTasks extends StatelessWidget {
           Container(
             width: double.maxFinite,
             height: MediaQuery.of(context).size.height/3.2,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  "assets/header1.jpg"
+                )
+              )
+            ),
           ),
         ],
       ),
