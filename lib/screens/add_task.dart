@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/colors/app_colors.dart';
+import 'package:task_manager/widgets/button_widget.dart';
 import 'package:task_manager/widgets/textfield_widget.dart';
 
 class AddTask extends StatelessWidget {
@@ -38,16 +39,20 @@ class AddTask extends StatelessWidget {
             Column( // this is for 2 text field and 1 button
               children: [
                 TextFieldWidget( //to get text field from widget folder
-                  textController: nameController, 
-                  hintText: "Task Name", 
-                  borderRadius: 30.0),
+                  textController: detailController, 
+                  hintText: "Task Name"),
                 SizedBox(height: 20.0,),
                   TextFieldWidget(
                                         //to get text field from widget folder
                     textController: nameController,
                     hintText: "Task Details",
-                    borderRadius: 10.0, 
+                    borderRadius: 15.0, 
                     maxLines: 3,),
+
+                    SizedBox(height: 20.0,), 
+                    
+                    ButtonWidget(backgroundcolor: AppColors.mainColor, 
+                    text: "Add Task", textColor: Colors.white),
               ],
             ),
             SizedBox(
