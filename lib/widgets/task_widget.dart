@@ -18,7 +18,7 @@ class TaskWidget extends StatelessWidget {
       height: MediaQuery.of(context).size.height/14,
       decoration: BoxDecoration(
         color: Color(0xFFedf0f8),
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(0),
       ),
       child: Center(
         child: Text(text, style: TextStyle(
