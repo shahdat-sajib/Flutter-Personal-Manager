@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/colors/app_colors.dart';
+import 'package:task_manager/widgets/button_widget.dart';
 import 'package:task_manager/widgets/task_widget.dart';
 
 class AllTasks extends StatelessWidget {
@@ -117,6 +118,41 @@ class AllTasks extends StatelessWidget {
                     confirmDismiss: (DismissDirection direction) async {
                       //async because it is future task
                       if(direction == DismissDirection.startToEnd){ //for when slide from end to start then it will go out
+                        showModalBottomSheet( 
+                          // for bottom sliding pop up window
+                          backgroundColor: Colors.transparent,
+                          barrierColor: Colors.transparent, //for pop up bg color 
+
+                          context: context, 
+                          builder: (_){
+                            return Container(
+                              height: 550.0,
+                              decoration: BoxDecoration( //for curve background of popup window
+                                color: Color(0xFF2e3253).withOpacity(0.4),
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(20.0),
+                                  topLeft: Radius.circular(20.0),
+                                )
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ButtonWidget(
+                                      backgroundcolor: AppColors.mainColor, 
+                                      text: "View", 
+                                      textColor: Colors.white),
+                                    SizedBox(height: 20.0,),
+                                    ButtonWidget(
+                                      backgroundcolor: AppColors.mainColor, 
+                                      text: "Edit", 
+                                      textColor: Colors.white),
+                                  ],
+                                ),
+                              ),
+                            );
+                          });
                         return false;
                       }else{
 
