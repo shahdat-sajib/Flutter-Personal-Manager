@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:task_manager/colors/app_colors.dart';
 import 'package:task_manager/widgets/button_widget.dart';
 import 'package:task_manager/widgets/task_widget.dart';
-import 'package:get/get.dart';
 
 class AllTasks extends StatelessWidget {
   const AllTasks({Key? key}) : super(key: key);
@@ -25,7 +24,7 @@ class AllTasks extends StatelessWidget {
     );
 
     final rightDeleteIcon = Container(
-      // forsliding edit icon
+      // for sliding edit icon
       margin: EdgeInsets.only(bottom: 10.0),
       color: Colors.red,
       child: Icon(

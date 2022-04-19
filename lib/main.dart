@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/screens/add_task.dart';
-import 'package:task_manager/screens/all_tasks.dart';
 import 'package:task_manager/screens/home_screen.dart';
 import 'package:get/get.dart';
 

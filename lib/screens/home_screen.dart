@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             InkWell( 
               onTap: (){  //for switching to all tasks page when tap the button
-                Get.to(()=>AllTasks(), 
+                Get.to(()=>AddTask(), 
                 transition: Transition.fade, 
                 duration: Duration(seconds: 1));
               },
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
               InkWell(
                 onTap: () {
                 //for switching to all tasks page when tap the button
-                Get.to(() => AddTask(),
+                Get.to(() => AllTasks(),
                     transition: Transition.zoom,
                     duration: Duration(milliseconds: 500));
               },
