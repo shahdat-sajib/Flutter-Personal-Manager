@@ -1,12 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/colors/app_colors.dart';
+import 'package:task_manager/widgets/task_widget.dart';
 
 class AllTasks extends StatelessWidget {
   const AllTasks({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+    List myData =[
+      "Try harder",
+      "Try smarter",
+      "My task"
+    ];
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -58,7 +66,20 @@ class AllTasks extends StatelessWidget {
                 ),)
               ],
             ),
-          )
+          ),
+          SizedBox(height: 25.0,),
+        Flexible(
+          child: ListView.builder(
+            itemCount: myData.length, //amar data length porjonto widget hote thakbe
+            itemBuilder: (context, index){ //data gulo array hisabe ace jonno index nite hoice
+            return Container(
+              margin: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
+              child: TaskWidget(
+                text: myData[index], 
+                color: Colors.blueGrey),
+            );
+          }),
+        )
         ],
       ),
     );

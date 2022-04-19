@@ -20,10 +20,12 @@ class TaskWidget extends StatelessWidget {
         color: Color(0xFFedf0f8),
         borderRadius: BorderRadius.circular(10.0),
       ),
-      child: Text(text, style: TextStyle(
-        fontSize: 20.0,
-        color: color,
-      ),),
+      child: Center(
+        child: Text(text, style: TextStyle(
+          fontSize: 20.0,
+          color: color,
+        ),),
+      ),
     );
   }
 }
